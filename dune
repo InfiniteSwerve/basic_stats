@@ -1,0 +1,3 @@
+(executable
+ (name basic_stats)
+ (libraries base))
