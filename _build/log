@@ -1,0 +1,116 @@
+# dune exec ./basic_stats.exe --root .
+# OCAMLPARAM: unset
+# Workspace root: /home/swerve/Code/Ocaml/stats/basic_stats
+$ /usr/bin/nproc > /tmp/dune8fa08c.output 2> /dev/null
+# Auto-detected concurrency: 4
+# disable binary cache
+$ /home/swerve/.opam/default/bin/ocamlc.opt -config > /tmp/dunea6bfc3.output
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dyn
+#  ; merlin = true
+#  ; for_host = None
+#  ; fdo_target_exe = None
+#  ; build_dir = "default"
+#  ; toplevel_path = Some External "/home/swerve/.opam/default/lib/toplevel"
+#  ; ocaml_bin = External "/home/swerve/.opam/default/bin"
+#  ; ocaml = Ok External "/home/swerve/.opam/default/bin/ocaml"
+#  ; ocamlc = External "/home/swerve/.opam/default/bin/ocamlc.opt"
+#  ; ocamlopt = Ok External "/home/swerve/.opam/default/bin/ocamlopt.opt"
+#  ; ocamldep = Ok External "/home/swerve/.opam/default/bin/ocamldep.opt"
+#  ; ocamlmklib = Ok External "/home/swerve/.opam/default/bin/ocamlmklib.opt"
+#  ; env =
+#      map
+#        { "DUNE_OCAML_HARDCODED" : "/home/swerve/.opam/default/lib"
+#        ; "DUNE_OCAML_STDLIB" : "/home/swerve/.opam/default/lib/ocaml"
+#        ; "DUNE_SOURCEROOT" : "/home/swerve/Code/Ocaml/stats/basic_stats"
+#        ; "INSIDE_DUNE" :
+#            "/home/swerve/Code/Ocaml/stats/basic_stats/_build/default"
+#        ; "OCAMLFIND_IGNORE_DUPS_IN" :
+#            "/home/swerve/Code/Ocaml/stats/basic_stats/_build/install/default/lib"
+#        ; "OCAMLPATH" :
+#            "/home/swerve/Code/Ocaml/stats/basic_stats/_build/install/default/lib"
+#        ; "OCAMLTOP_INCLUDE_PATH" :
+#            "/home/swerve/Code/Ocaml/stats/basic_stats/_build/install/default/lib/toplevel"
+#        ; "OCAML_COLOR" : "always"
+#        ; "OPAMCOLOR" : "always"
+#        }
+#  ; findlib_path = [ External "/home/swerve/.opam/default/lib" ]
+#  ; arch_sixtyfour = true
+#  ; natdynlink_supported = true
+#  ; supports_shared_libraries = true
+#  ; ocaml_config =
+#      { version = "4.12.0"
+#      ; standard_library_default = "/home/swerve/.opam/default/lib/ocaml"
+#      ; standard_library = "/home/swerve/.opam/default/lib/ocaml"
+#      ; standard_runtime = "the_standard_runtime_variable_was_deleted"
+#      ; ccomp_type = "cc"
+#      ; c_compiler = "gcc"
+#      ; ocamlc_cflags = [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-fPIC" ]
+#      ; ocamlc_cppflags = [ "-D_FILE_OFFSET_BITS=64"; "-D_REENTRANT" ]
+#      ; ocamlopt_cflags =
+#          [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-fPIC" ]
+#      ; ocamlopt_cppflags = [ "-D_FILE_OFFSET_BITS=64"; "-D_REENTRANT" ]
+#      ; bytecomp_c_compiler =
+#          [ "gcc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-fPIC"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ; "-D_REENTRANT"
+#          ]
+#      ; bytecomp_c_libraries = [ "-lm"; "-ldl"; "-lpthread" ]
+#      ; native_c_compiler =
+#          [ "gcc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-fPIC"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ; "-D_REENTRANT"
+#          ]
+#      ; native_c_libraries = [ "-lm"; "-ldl" ]
+#      ; cc_profile = []
+#      ; architecture = "amd64"
+#      ; model = "default"
+#      ; int_size = 63
+#      ; word_size = 64
+#      ; system = "linux"
+#      ; asm = [ "as" ]
+#      ; asm_cfi_supported = true
+#      ; with_frame_pointers = false
+#      ; ext_exe = ""
+#      ; ext_obj = ".o"
+#      ; ext_asm = ".s"
+#      ; ext_lib = ".a"
+#      ; ext_dll = ".so"
+#      ; os_type = "Unix"
+#      ; default_executable_name = "a.out"
+#      ; systhread_supported = true
+#      ; host = "x86_64-pc-linux-gnu"
+#      ; target = "x86_64-pc-linux-gnu"
+#      ; profiling = false
+#      ; flambda = false
+#      ; spacetime = false
+#      ; safe_string = true
+#      ; exec_magic_number = "Caml1999X029"
+#      ; cmi_magic_number = "Caml1999I029"
+#      ; cmo_magic_number = "Caml1999O029"
+#      ; cma_magic_number = "Caml1999A029"
+#      ; cmx_magic_number = "Caml1999Y029"
+#      ; cmxa_magic_number = "Caml1999Z029"
+#      ; ast_impl_magic_number = "Caml1999M029"
+#      ; ast_intf_magic_number = "Caml1999N029"
+#      ; cmxs_magic_number = "Caml1999D029"
+#      ; cmt_magic_number = "Caml1999T029"
+#      ; natdynlink_supported = true
+#      ; supports_shared_libraries = true
+#      ; windows_unicode = false
+#      }
+#  }
+# Workspace root: /home/swerve/Code/Ocaml/stats/basic_stats
+$ (cd _build/default && /home/swerve/.opam/default/bin/ocamldep.opt -modules -impl basic_stats.ml) > _build/default/.basic_stats.eobjs/basic_stats.ml.d
+$ (cd _build/default && /home/swerve/.opam/default/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I .basic_stats.eobjs/byte -I .basic_stats.eobjs/native -I /home/swerve/.opam/default/lib/alcotest -I /home/swerve/.opam/default/lib/alcotest/engine -I /home/swerve/.opam/default/lib/astring -I /home/swerve/.opam/default/lib/base -I /home/swerve/.opam/default/lib/base/base_internalhash_types -I /home/swerve/.opam/default/lib/base/caml -I /home/swerve/.opam/default/lib/base/shadow_stdlib -I /home/swerve/.opam/default/lib/bytes -I /home/swerve/.opam/default/lib/cmdliner -I /home/swerve/.opam/default/lib/fmt -I /home/swerve/.opam/default/lib/re -I /home/swerve/.opam/default/lib/seq -I /home/swerve/.opam/default/lib/sexplib0 -I /home/swerve/.opam/default/lib/stdlib-shims -I /home/swerve/.opam/default/lib/uchar -I /home/swerve/.opam/default/lib/uuidm -I /home/swerve/.opam/default/lib/uutf -intf-suffix .ml -no-alias-deps -opaque -open Dune__exe -o .basic_stats.eobjs/native/dune__exe__Basic_stats.cmx -c -impl basic_stats.ml)
+$ (cd _build/default && /home/swerve/.opam/default/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -o basic_stats.exe /home/swerve/.opam/default/lib/base/base_internalhash_types/base_internalhash_types.cmxa -I /home/swerve/.opam/default/lib/base/base_internalhash_types /home/swerve/.opam/default/lib/base/caml/caml.cmxa /home/swerve/.opam/default/lib/sexplib0/sexplib0.cmxa /home/swerve/.opam/default/lib/base/shadow_stdlib/shadow_stdlib.cmxa /home/swerve/.opam/default/lib/base/base.cmxa -I /home/swerve/.opam/default/lib/base /home/swerve/.opam/default/lib/stdlib-shims/stdlib_shims.cmxa /home/swerve/.opam/default/lib/fmt/fmt.cmxa /home/swerve/.opam/default/lib/astring/astring.cmxa /home/swerve/.opam/default/lib/cmdliner/cmdliner.cmxa /home/swerve/.opam/default/lib/fmt/fmt_cli.cmxa /home/swerve/.opam/default/lib/uuidm/uuidm.cmxa /home/swerve/.opam/default/lib/re/re.cmxa /home/swerve/.opam/default/lib/uutf/uutf.cmxa /home/swerve/.opam/default/lib/alcotest/engine/alcotest_engine.cmxa /home/swerve/.opam/default/lib/ocaml/unix.cmxa -I /home/swerve/.opam/default/lib/ocaml /home/swerve/.opam/default/lib/fmt/fmt_tty.cmxa /home/swerve/.opam/default/lib/alcotest/alcotest.cmxa -I /home/swerve/.opam/default/lib/alcotest .basic_stats.eobjs/native/dune__exe.cmx .basic_stats.eobjs/native/dune__exe__Basic_stats.cmx)

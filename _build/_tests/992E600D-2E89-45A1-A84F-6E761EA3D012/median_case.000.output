@@ -1,0 +1,11 @@
+[33mASSERT[0m median single list 5
+[31mFAIL[0m median single list 5
+
+   Expected: `[32m5[0m'
+   Received: `[31m6[0m'
+Raised at Alcotest_engine__Test.check in file "src/alcotest-engine/test.ml", line 174, characters 4-114
+Called from Dune__exe__Basic_stats.test_median in file "basic_stats.ml" (inlined), line 43, characters 12-28
+Called from Dune__exe__Basic_stats.test_median in file "basic_stats.ml", line 43, characters 2-80
+Called from Alcotest_engine__Core.Make.protect_test.(fun) in file "src/alcotest-engine/core.ml", line 277, characters 17-23
+Called from Alcotest_engine__Monad.Identity.catch in file "src/alcotest-engine/monad.ml", line 34, characters 31-35
+

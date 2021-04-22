@@ -1,0 +1,6 @@
+(** @canonical Dune__exe.Basic_stats *)
+module Basic_stats = Dune__exe__Basic_stats
+
+
+(** @canonical Dune__exe.Basic_stats_test *)
+module Basic_stats_test = Dune__exe__Basic_stats_test
