@@ -69,11 +69,31 @@ let rec slice l i j =
   else hd::(extract (j-i) tl)
 
 
-
 (*
 let five_number_summary data = 
-  let data = List.sort ~compare:compare_int data in 
+  if List.length data < 5 then invalid_arg "data must be > 4"
+  else 
+  let data = List.sort ~compare:compare_int data in
+  let half_len =  Float.to_int((Int.to_float (List.length data)/. 2.))  in
+  (List.hd data,
+   median (slice data 0 (half_len-1)),
+   median data,
+   median (slice data (half_len) (List.length data)),
+   last data
+   )
 *)
+
+let variance ?(sample=false) data = 
+  let mn = mean data in
+  let diffs = List.map data ~f:(fun x -> 
+    ((Int.to_float x) -. mn) **. 2. ) in
+  if sample then sum diffs) 
+  else 
+
+
+
+
+
 
 end
 (* Tests *)  
@@ -126,6 +146,8 @@ let test_slice () =
   Alcotest.(check (list int)) "7 item front slice" [1;2;3;4;5;6;7] (Basic_stats.slice (List.range 1 11) 0 6);
   Alcotest.(check (list int)) "middle 2 item slice" [2;3] (Basic_stats.slice (List.range 1 4) 1 2);
   Alcotest.(check (list int)) "rear 4 item slice" [3;4;5;6] (Basic_stats.slice (List.range 1 7) 2 6)
+
+
 
 
 
