@@ -1,10 +1,10 @@
 # dune exec ./basic_stats.exe --root .
 # OCAMLPARAM: unset
 # Workspace root: /home/swerve/Code/Ocaml/stats/basic_stats
-$ /usr/bin/nproc > /tmp/dune8fa08c.output 2> /dev/null
+$ /usr/bin/nproc > /tmp/dune001123.output 2> /dev/null
 # Auto-detected concurrency: 4
 # disable binary cache
-$ /home/swerve/.opam/default/bin/ocamlc.opt -config > /tmp/dunea6bfc3.output
+$ /home/swerve/.opam/default/bin/ocamlc.opt -config > /tmp/duneb82459.output
 # Dune context:
 #  { name = "default"
 #  ; kind = "default"
