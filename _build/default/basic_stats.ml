@@ -4,7 +4,10 @@ open Base
 (* Main *)
 module Basic_stats = struct
   
-
+let rec float_sum l accum = 
+  match l with
+  | [] -> accum
+  | hd::tl -> float_sum tl (accum +. hd)
 let rec sum l accum  = 
   match l with 
   | [] -> accum
@@ -68,15 +71,40 @@ let rec slice l i j =
   | hd::tl -> if i > 0 then slice tl (i-1) (j-1)
   else hd::(extract (j-i) tl)
 
+(** Returns variance of data. Optional boolean argument for 
+whether data is sample or population*)
+let variance ?(sample=false) data = 
+  let mn = mean data in
+  let diffs = List.map data ~f:(fun x -> 
+    ((Int.to_float x) -. mn) **. 2. ) in
+  if sample then (float_sum diffs 0.) /. Int.to_float((List.length data)-1)
+  else (float_sum diffs 0.) /. Int.to_float(List.length data)
 
 
-(*
-let five_number_summary data = 
-  let data = List.sort ~compare:compare_int data in 
-*)
+(** Returns variance of data. Optional boolean argument for
+whether data is sample or population*)
+let standard_deviation ?(sample=false) data = 
+  (variance ~sample:sample data) **. 0.5  
+
+(** Non tail-recursive factorial function *)
+let rec factorial n =
+  if n=0 then 1 
+  else n*(factorial (n-1))
+
+(** Non tail-recursive permutation function*)
+let rec permutation n k = 
+  if k=0 then 1
+  else n*(permutation (n-1) (k-1))
+
+
+(** Non tail-recursive combination function*)
+let combination n k = 
+  (permutation n k) / (factorial (k))
 
 end
 (* Tests *)  
+
+
 
 
 (* I don't know why, but I need this e to make float tests work*)
@@ -127,11 +155,32 @@ let test_slice () =
   Alcotest.(check (list int)) "middle 2 item slice" [2;3] (Basic_stats.slice (List.range 1 4) 1 2);
   Alcotest.(check (list int)) "rear 4 item slice" [3;4;5;6] (Basic_stats.slice (List.range 1 7) 2 6)
 
+let test_variance () = 
+  Alcotest.(check @@ float e) "basic variance of population" 2. (Basic_stats.variance [1;2;3;4;5] );
+  Alcotest.(check @@ float e) "basic variance of sample" 2.5 (Basic_stats.variance ~sample:true [1;2;3;4;5] )
 
+let test_standard_deviation () = 
+  Alcotest.(check bool) "standard deviation of population" true (Poly.(1.41 < (Basic_stats.standard_deviation [1;2;3;4;5]) && (Basic_stats.standard_deviation [1;2;3;4;5]) < 1.42));
+  Alcotest.(check bool) "standard deviation of sample" true Poly.(1.58 < Basic_stats.standard_deviation ~sample:true [1;2;3;4;5] && (Basic_stats.standard_deviation [1;2;3;4;5]) < 1.59)
 
+let test_factorial () = 
+  Alcotest.(check int) "unit factorial" 1 (Basic_stats.factorial 1);
+  Alcotest.(check int) "5 factorial" 120 (Basic_stats.factorial 5);
+  Alcotest.(check int) "10 factorial" 3628800 (Basic_stats.factorial 10)
 
+let test_permutation () = 
+  Alcotest.(check int) "unit permutation" 1 (Basic_stats.permutation 1 0);
+  Alcotest.(check int) "basic permutation" 90 (Basic_stats.permutation 10 2);
+  Alcotest.(check int) "big permutation" 665280 (Basic_stats.permutation 12 6)
 
+let test_combination () = 
+  Alcotest.(check int) "unit combination" 1 (Basic_stats.combination 1 0);
+  Alcotest.(check int) "basic combination" 45 (Basic_stats.combination 10 2);
+  Alcotest.(check int) "basic combination" 924 (Basic_stats.combination 12 6)
 
+let test_binomial () = 
+  Alcotest
+  
 
 (* Running Tests*)
 let () = 
@@ -163,6 +212,21 @@ let () =
         ];
         "slice_case",[
           test_case "slice"     `Quick test_slice;
+        ];
+        "variance_case",[      
+          test_case "variance"  `Quick test_variance;
+        ];
+        "standard_deviation_case",[
+          test_case "standard_deviation" `Quick test_standard_deviation;
+        ];
+        "factorial_test",[      
+          test_case "factorial" `Quick test_factorial;
+        ];
+        "permutation_test",[
+          test_case "permutation" `Quick test_permutation;
+        ];
+        "combination_test",[
+          test_case "combination" `Quick test_combination;
         ]
-      
+
 ]

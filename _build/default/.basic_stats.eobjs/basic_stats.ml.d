@@ -1,1 +1,1 @@
-basic_stats.ml: Alcotest Base Float Int List
+basic_stats.ml: Alcotest Base Float Int List Poly

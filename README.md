@@ -33,4 +33,4 @@ You can run the file with included test bc cding into the folder and running 'du
 
 - Extract tests into separate file
 - Write interface in .mli file
-- 
+- make float_sum and sum cooperate 
