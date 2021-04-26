@@ -2,7 +2,7 @@
 
 A module with basic statistics functionality.
 
-You can run the file with included test bc cding into the folder and running 'dune exec ./basic_stats.exe --root .'
+You can run the file with included test by cding into the folder and running 'dune exec ./basic_stats.exe --root .'
 
 ## Statistics Functions Include:
 - mean
