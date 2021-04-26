@@ -1,0 +1,11 @@
+[33mASSERT[0m singleton list
+[33mASSERT[0m singleton list
+[31mFAIL[0m singleton list
+
+   Expected: `[32m[(1, 1); (2, 1); (3, 1); (4, 1)][0m'
+   Received: `[31m[(4, 1); (3, 1); (2, 1); (1, 1)][0m'
+Raised at Alcotest_engine__Test.check in file "src/alcotest-engine/test.ml", line 174, characters 4-114
+Called from Dune__exe__Basic_stats.test_factor_counts in file "basic_stats.ml", line 58, characters 2-122
+Called from Alcotest_engine__Core.Make.protect_test.(fun) in file "src/alcotest-engine/core.ml", line 277, characters 17-23
+Called from Alcotest_engine__Monad.Identity.catch in file "src/alcotest-engine/monad.ml", line 34, characters 31-35
+

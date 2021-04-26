@@ -101,6 +101,8 @@ let rec permutation n k =
 let combination n k = 
   (permutation n k) / (factorial (k))
 
+
+
 end
 (* Tests *)  
 
@@ -177,7 +179,6 @@ let test_combination () =
   Alcotest.(check int) "unit combination" 1 (Basic_stats.combination 1 0);
   Alcotest.(check int) "basic combination" 45 (Basic_stats.combination 10 2);
   Alcotest.(check int) "basic combination" 924 (Basic_stats.combination 12 6)
-
 
 
 (* Running Tests*)
