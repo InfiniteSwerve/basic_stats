@@ -2,7 +2,7 @@
 
 A module with basic statistics functionality.
 
-You can run the file with included test by cding into the folder and running 'dune exec ./basic_stats.exe --root .'
+You can run the file with included tests by cding into the folder and running 'dune exec ./basic_stats.exe --root .'
 
 ## Statistics Functions Include:
 - mean
@@ -18,7 +18,7 @@ You can run the file with included test by cding into the folder and running 'du
 - max_val (returns the key with the largest value in an association list)
 - last (returns last element in a list)
 - extract (returns the first n elements in a list)
-- slice (slices a list from indeces i to j)
+- slice (slices a list from indices i to j)
 
 
 ## TODO
@@ -26,5 +26,5 @@ You can run the file with included test by cding into the folder and running 'du
 - geometric_pdf 
 - poisson_pdf
 - normal_pdf
-
 - numerical integration for pdf's
+- separate tests and module
