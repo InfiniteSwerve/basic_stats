@@ -8,6 +8,9 @@ You can run the file with included test bc cding into the folder and running 'du
 - mean
 - median
 - mode
+- variance
+- permutation
+- combination
 
 ## Helper Functions Include: 
 - sum
@@ -19,18 +22,9 @@ You can run the file with included test bc cding into the folder and running 'du
 
 
 ## TODO
-- five_number_summary
-- variance
-- standard_deviation
-- factorial
-- permutation
-- combination
-- cartesian product
 - binomial_pdf
 - geometric_pdf 
 - poisson_pdf
 - normal_pdf
 
-- Extract tests into separate file
-- Write interface in .mli file
-- make float_sum and sum cooperate 
+- numerical integration for pdf's
